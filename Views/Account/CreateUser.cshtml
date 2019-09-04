@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model CreateUserVM
+@{
+    ViewData["Title"] = "CreateUser";
+}
+
+<h1>CreateUser</h1>
+@if (ViewBag.msg != null)
+{
+    <p style="color:green">ViewBag.msg</p>
+}
+
+@if (ViewBag.errorlist != null)
+{
+    <ul>
+        @foreach (var item in (IEnumerable<IdentityError>)ViewBag.errorlist)
+        {
+            <li>@item.Description</li>
+        }
+    </ul>
+}
+
+<form asp-action="CreateUser" method="post">
+
+    <label asp-for="UserName"></label>
+    <input asp-for="UserName" />
+
+    <label asp-for="Email"></label>
+    <input asp-for="Email" />
+
+    <label asp-for="Password"></label>
+    <input asp-for="Password" />
+
+    <label asp-for="ConfirmPassword"></label>
+    <input asp-for="ConfirmPassword" />
+
+    <input type="submit" value="Create" />
+</form>

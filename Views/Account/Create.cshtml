@@ -1,0 +1,23 @@
+﻿@model LoginVM
+@{
+    ViewData["Title"] = "SignIn";
+}
+
+<h1>Create User</h1>
+
+@if (ViewBag.msg != null)
+{
+    <p style="color:red">Status: @ViewBag.msg</p>
+}
+
+    <form asp-action="Create" method="post">
+
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" />
+
+        <label asp-for="Password" ></label>
+        <input asp-for="Password" />
+
+        <input type="submit" value="Login" />
+
+    </form>
