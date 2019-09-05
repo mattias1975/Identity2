@@ -13,7 +13,7 @@
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
               crossorigin="anonymous"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
     <link rel="stylesheet" href="~/css/Site.css" />
 </head>
@@ -43,19 +43,22 @@
                         }
                         else
                         {
+
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="SignIn">Login</a>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="CreateUser">Add User</a>
+                                <button class="nav-link text-dark">
+                                    <a asp-area="" asp-controller="Account" asp-action="SignIn">Login</a>
+                                </button>
+                            
+                                    </li>
+                            <li>
+                                <button class="nav-link text-dark">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="CreateUser">Add User</a>
+                                </button>
                             </li>
+                         
                         }
 
-                    </ul>
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                     
-                    </ul>
+                 
 
                 </div>
             </div>
@@ -70,7 +73,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; Mattias Gustavsson - @DateTime.Now.Year<a asp-area="" asp-controller="Home" asp-action="Index">&nbsp; Go to Start</a>
+            &copy; Mattias Gustavsson - @DateTime.Now.Year
         </div>
     </footer>
 
