@@ -72,7 +72,7 @@ namespace WebAppMVCRecap.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult CreateUser()
         {

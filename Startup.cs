@@ -55,7 +55,7 @@ namespace WebAppMVCRecap
                 option.IterationCount = 100_000;
             });
 
-            services.AddSingleton<ICarsRepository, MockCarsRepository>();
+         
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
