@@ -20,19 +20,27 @@
     </ul>
 }
 
-<form asp-action="CreateUser" method="post">
+    <form asp-action="CreateUser" method="post">
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName" />
+            </div>
+            <div class="col-4">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" />
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" />
+            </div>
+            <div>
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" />
 
-    <label asp-for="UserName"></label>
-    <input asp-for="UserName" />
-
-    <label asp-for="Email"></label>
-    <input asp-for="Email" />
-
-    <label asp-for="Password"></label>
-    <input asp-for="Password" />
-
-    <label asp-for="ConfirmPassword"></label>
-    <input asp-for="ConfirmPassword" />
-
-    <input type="submit" value="Create User" />
+                <input type="submit" value="Create User" />
+            </div>
+        </div>
 </form>

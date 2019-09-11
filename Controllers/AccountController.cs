@@ -76,7 +76,7 @@ namespace WebAppMVCRecap.Controllers
         [HttpGet]
         public IActionResult CreateUser()
         {
-            return View(_userManager);
+            return View();
         }
 
         [HttpPost]
