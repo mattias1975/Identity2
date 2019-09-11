@@ -4,7 +4,7 @@
     ViewData["Title"] = "CreateUser";
 }
 
-<h1>CreateUser</h1>
+<h1 >Create User</h1>
 @if (ViewBag.msg != null)
 {
     <p style="color:green">ViewBag.msg</p>
@@ -30,7 +30,7 @@
                 <label asp-for="Email"></label>
                 <input asp-for="Email" />
             </div>
-            </div>
+        </div>
         <div class="row">
             <div class="col-4">
                 <label asp-for="Password"></label>
@@ -40,7 +40,7 @@
                 <label asp-for="ConfirmPassword"></label>
                 <input asp-for="ConfirmPassword" />
 
-                <input type="submit" value="Create User" />
+                <input type="submit" value="Create" />
             </div>
         </div>
-</form>
+    </form>
