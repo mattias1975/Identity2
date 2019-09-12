@@ -10,21 +10,21 @@
 <table>
     <thead>
         <tr>
-            <th>Id</th>
             <th>Name</th>
-            <th>Options</th>
+       
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>@item.Id</td>
-                <td>@item.Name</td>
-                <td>
-                    <a asp-action="AddUserToRole" asp-route-role="@item.Name">Add Users to role</a>
-                </td>
-            </tr>
+        <tr>
+       
+            <td>@item.Name</td>
+            <td></td>
+            <td>
+                <a asp-action="AddUserToRole" asp-route-role="@item.Name">Add Users to role</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
