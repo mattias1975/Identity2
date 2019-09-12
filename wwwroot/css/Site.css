@@ -4,6 +4,15 @@
 h1 {
     color: #ff6a00;
 }
+h3{
+    color:#8000ff;
+}
 div{
     color:#0026ff;
+}
+
+input {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
 }

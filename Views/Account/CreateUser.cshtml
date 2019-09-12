@@ -23,24 +23,34 @@
     <form asp-action="CreateUser" method="post">
         <div class="row">
             <div class="col-4">
-                <label asp-for="UserName"></label>
-                <input asp-for="UserName" />
+               <div><label asp-for="UserName"></label></div> 
+               <div><input asp-for="UserName" /></div> 
             </div>
-            <div class="col-4">
-                <label asp-for="Email"></label>
-                <input asp-for="Email" />
             </div>
-        </div>
         <div class="row">
             <div class="col-4">
-                <label asp-for="Password"></label>
-                <input asp-for="Password" />
+                <div><label asp-for="Email"></label></div>
+                <div>
+                <input asp-for="Email" /></div>
             </div>
-            <div>
-                <label asp-for="ConfirmPassword"></label>
-                <input asp-for="ConfirmPassword" />
-
-                <input type="submit" value="Create" />
             </div>
-        </div>
+        <div class="row">
+    
+            <div class="col-4">
+                <div><label asp-for="Password"></label></div>
+                <div><input asp-for="Password" /></div>
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-4">
+                <div> <label asp-for="ConfirmPassword"></label></div>
+              <div><input asp-for="ConfirmPassword" /></div>  
+                </div>
+            </div>
+          
+                <div class="col=4">
+                    <div>Admin<input type="checkbox" name="Admin" value="Admin"> </div>
+                    <div><input type="submit" value="Create" /></div>
+                </div>
+          
     </form>

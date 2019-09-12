@@ -19,51 +19,84 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Identity</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+  
+     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+             
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><h3>Identity</h3></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav ml-auto">
+                            @if (User.Identity.IsAuthenticated)
+
+                            {
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        User´s
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Logout">Log Out</a>
+
+                                        <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="CreateUser">Add User </a>
+
+                                    </div>
+                                </div>
+
+
+
+
+
+
+                                @*<div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    User´s
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav ml-auto">
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="RoleList">Roles</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="CreateUser">Add User</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
-                            </li>
-                        }
-                        else
-                        {
-
-                            
-                                <button class="btn-outline-primary">
-                                    <a asp-area="" asp-controller="Account" asp-action="SignIn">Login</a>
-                                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
 
-                                <button class="btn-outline-primary">
-                                    <a asp-area="" asp-controller="Account" asp-action="CreateUser" class="nav-link">Register</a>
-                                </button>
-                      
-                        }
-
-                 
+                    <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="CreateUser">Add User</a>
 
                 </div>
             </div>
-        </nav>
+
+
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+            </li>*@
+
+
+
+                            }
+
+                            else
+                            {
+
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        User´s
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="SignIn">Log in</a>
+
+                                        <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="CreateUser">Add User</a>
+
+                                    </div>
+                                </div>
+
+
+                            }
+
+
+
+</div>
+                </div>
+            </nav>
     </header>
     <div class="container">
-        @*<partial name="_CookieConsentPartial" />*@
+       
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

@@ -34,12 +34,12 @@ namespace WebAppMVCRecap.Controllers
         [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SignIn(LoginVM login)
+        public async Task<IActionResult> SignIn(LoginVM SignIn)
         {
 
             if (ModelState.IsValid)
             {
-                var SignInResultr = await _signInManager.PasswordSignInAsync(login.UserName, login.Password, false, false);
+                var SignInResultr = await _signInManager.PasswordSignInAsync(SignIn.UserName, SignIn.Password, false, false);
 
                 switch (SignInResultr.ToString())
                 {
@@ -60,7 +60,7 @@ namespace WebAppMVCRecap.Controllers
 
 
 
-            return View(login);
+            return View(SignIn);
                      
         }
 
@@ -78,7 +78,7 @@ namespace WebAppMVCRecap.Controllers
         {
             return View();
         }
-
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> CreateUser(CreateUserVM createUser)
         {
