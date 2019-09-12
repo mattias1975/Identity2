@@ -2,6 +2,11 @@
 @{
     ViewData["Title"] = "Index";
 }
+@if (User.Identity.IsAuthenticated)
+{<h1>You are inloged in system</h1>
+}
+@if (!User.Identity.IsAuthenticated)
+{
 
-<h1>Home Index</h1>
-
+ <h1> You most log in </h1> 
+        }

@@ -60,7 +60,7 @@ namespace WebAppMVCRecap.Controllers
 
 
 
-            return View(SignIn);
+            return View("You have loged in");
                      
         }
 
