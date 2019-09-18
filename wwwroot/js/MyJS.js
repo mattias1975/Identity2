@@ -29,4 +29,21 @@ function ConfirmDeleteListItem(html_id, delete_url, item_id) {
             }
         }
     );
-}
+    function AddPersonToRole(html_id, Role_id, User_Id, edit_url) {
+       
+
+            $.post(edit_url,
+                {
+                    rId: Role_id,
+                    UId: User_Id
+
+                }
+
+                , function (data, status) {
+                    $('#User' + User_Id).replaceWith('');
+                    $('#CurrentUser').text(data);
+
+
+                });
+
+        }

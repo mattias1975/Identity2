@@ -61,7 +61,7 @@ namespace WebAppMVCRecap.Controllers
 
 
             return View("You have loged in");
-                     
+
         }
 
 
@@ -130,21 +130,25 @@ namespace WebAppMVCRecap.Controllers
             return View(name);
         }
 
-        [HttpGet]
-        public IActionResult AddUserToRole(string role)
-        {
-            ViewBag.Role = role;
+     [HttpGet]
+ public IActionResult AddUserToRole(string role)
+   {
+   ViewBag.Role = role;
 
-            return View(_userManager.Users.ToList());
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> AddUserToRoleSave(string userId, string role)
-        {
-            var user = await _userManager.FindByIdAsync(userId);
-            var result = await _userManager.AddToRoleAsync(user, role);
-
-            return RedirectToAction(nameof(RoleList));
-        }
-    }
+   return View(_userManager.Users.ToList());
 }
+
+   [HttpGet]
+public async Task<IActionResult> AddUserToRoleSave(string userId, string role)
+{
+  var user = await _userManager.FindByIdAsync(userId);
+  var result = await _userManager.AddToRoleAsync(user, role);
+return RedirectToAction(nameof(RoleList));
+ }
+
+
+    }
+
+  
+
+    }

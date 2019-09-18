@@ -5,26 +5,33 @@
 
 <h1>RoleList</h1>
 
-<a asp-controller="Account" asp-action="AddRole" class="btn btn-primary">Add new role</a>
+@*<a asp-controller="Account" asp-action="AddRole" class="btn btn-primary">Add new role</a>*@
 
 <table>
     <thead>
         <tr>
             <th>Name</th>
-       
+            <th>Members</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-       
-            <td>@item.Name</td>
-            <td></td>
-            <td>
-                <a asp-action="AddUserToRole" asp-route-role="@item.Name">Add Users to role</a>
-            </td>
+            <tr>
+
+                <td>@item.Name</td>
+                <td>@item.Id </td>
+                <td></td>
+                <td>
+        <thead>
+            <tr></tr>
+        </thead>
+        </td>
         </tr>
+        <tr>
+
+            <td></td>
+        </tr>
+
         }
-    </tbody>
-</table>
+    </table>

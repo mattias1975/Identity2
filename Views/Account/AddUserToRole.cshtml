@@ -11,10 +11,11 @@
         <tr>
             <td>@item.UserName</td>
             <td>
-                @Html.ActionLink("Give role", "AddUserToRoleSave", "Account", new { role = ViewBag.Role, userId = item.Id })
+                @Html.ActionLink("Give role", "AddPersonToRole", "Account", new { role = ViewBag.Role, userId = item.Id })
             </td>
         </tr>
     }
 </table>
 
 <a asp-controller="Account" asp-action="RoleList">Back to Roles list</a>
+
