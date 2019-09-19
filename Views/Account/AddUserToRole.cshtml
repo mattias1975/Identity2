@@ -8,12 +8,20 @@
 <table>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>@item.UserName</td>
-            <td>
-                @Html.ActionLink("Give role", "AddPersonToRole", "Account", new { role = ViewBag.Role, userId = item.Id })
-            </td>
-        </tr>
+    <tr>
+        <td>@item.UserName</td>
+       
+        <td>
+            <button> @Html.ActionLink("add to group ", "AddUserToRole", "Account", new { role = ViewBag.Role, userId = item.Id })</button>
+           
+        </td>
+        <td>
+            <button class="btn btn-danger btn-sm m-1"
+                    onclick="AddPersonToRole('@("User" + Model)','@Url.Action("AddpersontoRole","user",new { id = Model })')">
+                Delete
+            </button>
+        </td>
+    </tr>
     }
 </table>
 

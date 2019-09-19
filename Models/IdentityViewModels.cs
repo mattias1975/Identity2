@@ -41,4 +41,15 @@ namespace WebAppMVCRecap.Models
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
     }
+    public class GroupedUserViewModel
+    {
+        public List<UserViewModel> Users { get; set; }
+        public List<UserViewModel> Admins { get; set; }
+    }
+
+    public class UserViewModel
+    {
+        public string Username { get; set; }
+        public string Roles { get; set; }
+    }
 }
