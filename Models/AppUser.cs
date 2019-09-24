@@ -8,6 +8,6 @@ namespace WebAppMVCRecap.Models
 {
     public class AppUser : IdentityUser
     {
-        public int Usernumber { get; set; }
+        public int UserNumber { get; set; }
     }
 }
