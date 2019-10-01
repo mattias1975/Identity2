@@ -113,7 +113,7 @@ namespace WebAppMVCRecap.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddRole(string name)
+        public async Task<IActionResult> AddRole(string name, string option)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -127,7 +127,7 @@ namespace WebAppMVCRecap.Controllers
                 return RedirectToAction("RoleList");
             }
 
-            return View(name);
+            return View(name, option);
         }
 
      [HttpGet]
