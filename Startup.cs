@@ -31,7 +31,7 @@ namespace WebAppMVCRecap
                 options.UseSqlServer(Configuration.GetConnectionString("BasicContext")));
 
             // Able to inject our User/Role/SignIn Manager´s
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 
             services.Configure<IdentityOptions>(options =>
             {   // Default Password settings.

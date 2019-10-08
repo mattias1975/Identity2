@@ -8,12 +8,19 @@
 <table>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>@item.UserName</td>
-            <td>
-                @Html.ActionLink("Give role", "AddPersonToRole", "Account", new { role = ViewBag.Role, userId = item.Id })
-            </td>
-        </tr>
+    <tr>
+        <td>@item.Email</td>
+        <td>&nbsp;</td>
+        <td>@item.UserName</td>
+  
+       
+        <td>
+            <a asp-controller="Account" asp-action="AddUserToRoleSave">Add User</a>
+           
+
+        </td>
+        
+    </tr>
     }
 </table>
 

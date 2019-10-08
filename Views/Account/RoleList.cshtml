@@ -1,37 +1,80 @@
-﻿@model List<AppUser>
+﻿@model List<IdentityRole>
 @{
     ViewData["Title"] = "RoleList";
 }
 
 <h1>RoleList</h1>
 
-@*<a asp-controller="Account" asp-action="AddRole" class="btn btn-primary">Add new role</a>*@
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Members</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
+<div id="Memberlist">
 
-                <td>@item.Name</td>
-                <td>@item </td>
-                <td></td>
-                <td>
+    <table>
         <thead>
-            <tr></tr>
+            <tr>
+                <th>Name</th>
+                <th>Members</th>
+            </tr>
         </thead>
-        </td>
-        </tr>
-        <tr>
+        <tbody>
+            @foreach (var item in Model)
+            {
 
-            <td></td>
-        </tr>
+            <td>@item.Name</td>
+          <td>   <a asp-controller="Account" asp-action="AddUserToRole" class="btn btn-primary">Add user to  role</a></td>
+            <td><button>show members</button></td>
 
-        }
-    </table>
+            
+                <thead>
+                    <tr></tr>
+
+
+                    <tr>
+
+                        <td></td>
+                    </tr>
+                </thead>
+
+                }
+        </table>
+
+
+
+
+
+
+
+
+
+
+        @*<div id="Memberlist" align="center">
+
+
+                @if ite != null)
+                {
+                    @foreach (var item in Model.)
+                    {
+
+                        <partial name="_StudentInClass" model="item" />
+                    }
+
+
+                }
+
+                else
+                {
+
+
+                    <p>No students</p>
+                }
+
+            </div>
+
+            <button class="btn btn-dark btn-sm m-1"> <a href="javascript:history.back();">Back</a></button>*@
+
+
+
+
+
+
+
+
