@@ -1,5 +1,5 @@
 ﻿@using Identity.Models;
-@model Identity.Models.AppUser;
+@model Identity.Models.People;
 @{
     ViewData["Title"] = "AddRole";
 }
@@ -8,8 +8,8 @@
 
 <form asp-action="AddRole" method="post">
     
-    <label asp-for="UserName"></label>
-    @*<input asp-for="UserNumber" />*@
+    <label asp-for="Name"></label>
+   <input asp-for="UserEmail" />
 
     <input type="submit" value="Add" class="btn btn-success" />
 </form>

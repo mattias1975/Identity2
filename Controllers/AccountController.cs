@@ -4,7 +4,7 @@ using Identity.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using WebAppMVCRecap.Models;
+using Identity.Models;
 
 namespace Identity.Controllers
 {
@@ -14,6 +14,8 @@ namespace Identity.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+
+        public Microsoft.AspNetCore.Identity.SignInResult SignInResultr { get; private set; }
 
         public AccountController(RoleManager<IdentityRole> roleManager,
                                  UserManager<AppUser> userManager,
@@ -36,9 +38,9 @@ namespace Identity.Controllers
         public async Task<IActionResult> SignIn(LoginVM SignIn)
         {
 
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) 
             {
-                var SignInResultr = await _signInManager.PasswordSignInAsync(SignIn.UserName, SignIn.Password, false, false);
+                SignInResultr = await _signInManager.PasswordSignInAsync(SignIn.UserName, SignIn.Password, false, false);
 
                 switch (SignInResultr.ToString())
                 {
@@ -59,7 +61,7 @@ namespace Identity.Controllers
 
 
 
-            return View("You have loged in");
+            return View();
 
         }
 
