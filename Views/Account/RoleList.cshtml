@@ -12,64 +12,35 @@
         <thead>
             <tr>
                 <th>Name</th>
+                <th>&nbsp;</th>
                 <th>Members</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                <td>    <a asp-controller="Account" asp-action="AddUserToRole" class="btn btn-success">Add user to  role</a></td>
+            </tr>
+          
+       
 
-            <td>@item.Name</td>
-          <td>   <a asp-controller="Account" asp-action="AddUserToRole" class="btn btn-primary">Add user to  role</a></td>
-            <td><button>show members</button></td>
+            }
 
-            
-                <thead>
-                    <tr></tr>
-
-
-                    <tr>
-
-                        <td></td>
-                    </tr>
-                </thead>
-
-                }
+                            
         </table>
 
 
+        <button class="btn btn-dark btn-sm m-1"> <a href="javascript:history.back();">Back</a></button>
+  
 
 
 
 
-
-
-
-
-        @*<div id="Memberlist" align="center">
-
-
-                @if ite != null)
-                {
-                    @foreach (var item in Model.)
-                    {
-
-                        <partial name="_StudentInClass" model="item" />
-                    }
-
-
-                }
-
-                else
-                {
-
-
-                    <p>No students</p>
-                }
-
-            </div>
-
-            <button class="btn btn-dark btn-sm m-1"> <a href="javascript:history.back();">Back</a></button>*@
 
 
 
