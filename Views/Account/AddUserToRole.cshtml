@@ -1,4 +1,5 @@
-﻿@model List<IdentityUser>
+﻿@using Identity.Models;
+@model List<AppUser>
 @{
     ViewData["Title"] = "AddUserToRole";
 }
@@ -9,17 +10,21 @@
     @foreach (var item in Model)
     {
     <tr>
-        <td>@item.Email</td>
+        @*<td>@item.UserNumber</td>*@
         <td>&nbsp;</td>
-        <td>@item.UserName</td>
-  
-       
+        @if (item.UserName != null)
+        {
+            <td>@item.UserName</td>
+        }
+
+
+
         <td>
             <a asp-controller="Account" asp-action="AddUserToRoleSave">Add User</a>
-           
+
 
         </td>
-        
+
     </tr>
     }
 </table>

@@ -1,11 +1,12 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using Identity.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebAppMVCRecap.Models;
 
-namespace WebAppMVCRecap.Controllers
+namespace Identity.Controllers
 {
     [Authorize]
     public class AccountController : Controller

@@ -7,17 +7,17 @@
 
 @if (ViewBag.msg != null)
 {
-    <p style="color:red">Status: @ViewBag.msg</p>
+<p style="color:red">Status: @ViewBag.msg</p>
 }
 
-    <form asp-action="SignIn" method="post">
+<form asp-action="SignIn" method="post">
 
-        <label asp-for="UserName"></label>
-        <input asp-for="UserName" />
+    <label asp-for="UserName"></label>
+    <input asp-for="UserName" />
 
-        <label asp-for="Password" ></label>
-        <input asp-for="Password" />
+    <label asp-for="Password"></label>
+    <input asp-for="Password" />
 
-        <input type="submit" value="Log in" />
+    <input type="submit" value="Log in" />
 
-    </form>
+</form>

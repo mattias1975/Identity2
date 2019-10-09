@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Identity.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace WebAppMVCRecap.Models
+namespace Identity.Models
 {
     public class AppDbContext : IdentityDbContext<AppUser>
     {
@@ -10,6 +11,6 @@ namespace WebAppMVCRecap.Models
         {
         }
 
-        public DbSet<Person> People { get; set; }
+        public DbSet<People> People { get; set; }
     }
 }
