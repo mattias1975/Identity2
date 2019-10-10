@@ -9,5 +9,6 @@ namespace Identity.Models
     public class AppUser : IdentityUser
     {
         public int UserNumber { get; set; }
+       
     }
 }

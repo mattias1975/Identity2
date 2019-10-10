@@ -140,10 +140,11 @@ namespace Identity.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> AddUserToRoleSave(string userId, string role)
+        public async Task<IActionResult> AddUserToRoleSave(string userId, string roleId)
         {
+
             var user = await _userManager.FindByIdAsync(userId);
-            var result = await _userManager.AddToRoleAsync(user, role);
+            //var result = await _userManager.AddToRoleAsync(user, roleId);
             return RedirectToAction(nameof(RoleList));
         }
     }
