@@ -19,33 +19,21 @@
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                <td>
-                    @item.Name
-                </td>
-                <td>
-                <td>    <a asp-controller="Account" asp-action="AddUserToRole" class="btn btn-success">Add user to Country</a></td>
-            </tr>
-          
-       
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                    <td>    <a asp-controller="Account" asp-action="AddUserToRole" class="btn btn-success">Add user to Country</a></td>
+                </tr>
+
+
 
             }
 
-                            
-        </table>
+
+    </table>
 
 
-        <button class="btn btn-dark btn-sm m-1"> <a href="javascript:history.back();">Back</a></button>
-  
-
-
-
-
-
-
-
-
-
-
-
+    <button class="btn btn-dark btn-sm m-1"> <a href="javascript:history.back();">Back</a></button>
 

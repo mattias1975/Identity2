@@ -4,7 +4,7 @@
     ViewData["Title"] = "AddUserToRole";
 }
 
-<h1>Add User To Role</h1>
+<h1>Add User To Country</h1>
 
 <table>
     @foreach (var item in Model)
@@ -17,7 +17,7 @@
             @if (item.Id != null)
             {
                 <td>@item.UserName</td>
-                <td>@item.Email</td>
+           <td> @item.Admin</td>
             }
 
         }

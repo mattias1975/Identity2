@@ -4,7 +4,7 @@
         ViewData["Title"] = "Index";
     }
     @if (User.Identity.IsAuthenticated)
-    {<h1>Welcom @User.Identity.Name</h1>
+    {<h1>Welcome @User.Identity.Name</h1>
        <button><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="RoleList">Country´s </a></button> 
         <button><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="AddRole">Add Country </a></button>
     }
