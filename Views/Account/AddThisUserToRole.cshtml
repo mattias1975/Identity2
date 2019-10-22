@@ -1,0 +1,11 @@
+﻿@model List<IdentityRole>
+@{
+    ViewData["Title"] = "AddThisUserToRole";
+}
+
+<h1>Pick role for the user</h1>
+
+@foreach (var item in Model)
+{
+    @Html.ActionLink(item.Name, "AddUserToRoleSave", "Account", new { userId = ViewBag.UsersId , roleId = item.Id })
+}

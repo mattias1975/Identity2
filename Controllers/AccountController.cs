@@ -133,11 +133,17 @@ namespace Identity.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddUserToRole(string role)
+        public IActionResult AddUserToRole()
         {
-            ViewBag.Role = role;
-
             return View(_userManager.Users.ToList());
+        }
+
+        [HttpGet]
+        public IActionResult AddThisUserToRole(string UserId)
+        {
+            ViewBag.UsersId = UserId;
+
+            return View(_roleManager.Roles.ToList());
         }
 
         [HttpGet]
@@ -145,7 +151,7 @@ namespace Identity.Controllers
         {
 
             var user = await _userManager.FindByIdAsync(userId);
-            //var result = await _userManager.AddToRoleAsync(user, roleId);
+            var result = await _userManager.AddToRoleAsync(user, roleId);
             return RedirectToAction(nameof(RoleList));
         }
     }
