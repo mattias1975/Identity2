@@ -39,6 +39,7 @@ namespace Identity.Controllers
         {
 
             if (ModelState.IsValid) 
+                
             {
                 SignInResultr = await _signInManager.PasswordSignInAsync(SignIn.UserName, SignIn.Password, false, false);
 
@@ -114,7 +115,7 @@ namespace Identity.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddRole(string name, string option)
+        public async Task<IActionResult> AddRole(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -128,7 +129,7 @@ namespace Identity.Controllers
                 return RedirectToAction("RoleList");
             }
 
-            return View(name, option);
+            return View("AddRole", name);
         }
 
         [HttpGet]

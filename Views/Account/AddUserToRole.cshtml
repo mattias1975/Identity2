@@ -14,27 +14,27 @@
         <td>&nbsp;</td>
         @if (item.UserName != null)
         {
-            @if (item.Id != null)
-            {
+           
                 <td>@item.UserName</td>
                 <td> @item.Admin</td>
             }
 
-        }
+        
 
 
-        @if (item.Admin == true)
-        {
+      
+   
             <td>
-                <button type="button" class="btn btn-success"> <a asp-controller="Account" asp-action="AddUserToRoleSave">Add User</a></button>
+                <button type="button" class="btn btn-success"> <a asp-controller="Account" asp-action="AddUserToRole">Add User</a></button>
 
 
             </td>
-        }
+  
 
 
     </tr>
     }
+    
 </table>
 
 <a asp-controller="Account" asp-action="RoleList">Back to Roles list</a>

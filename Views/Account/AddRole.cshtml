@@ -1,5 +1,4 @@
-﻿@using Identity.Models;
-@model Identity.Models.People;
+﻿@model String
 @{
     ViewData["Title"] = "AddRole";
 }
@@ -8,8 +7,8 @@
 
 <form asp-action="AddRole" method="post">
     
-    <label asp-for="Name"></label>
-  <input asp-for="Name" />
+    <label for="name"></label>
+  <input id="name" name="name" type="text" value="@Model" />
 
     <input type="submit" value="Add" class="btn btn-success" />
 </form>
