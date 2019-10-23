@@ -139,11 +139,11 @@ namespace Identity.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddThisUserToRole(string UserId)
+        public IActionResult AddThisUserToRole(string id)
            
         {
             
-            ViewBag.userId = UserId;
+            ViewBag.userId = id;
 
             return View(_roleManager.Roles.ToList());
         }
