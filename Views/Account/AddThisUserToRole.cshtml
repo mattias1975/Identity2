@@ -7,5 +7,14 @@
 
 @foreach (var item in Model)
 {
-    @Html.ActionLink(item.Name, "AddUserToRoleSave", "Account", new { userId = ViewBag.UsersId , roleId = item.Id })
+    <table>
+        <tr>
+            <td type="button" class=" btn-link ">
+
+                <div class="btn-btn">
+                    @Html.ActionLink(item.Name, "AddUserToRoleSave", "Account", new { userId = ViewBag.UsersId, roleId = item.Id })
+          </div>  </td>
+        </tr>
+    </table>
+   
 }

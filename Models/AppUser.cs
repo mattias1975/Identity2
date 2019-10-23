@@ -6,5 +6,6 @@ namespace Identity.Models
     {
         public int UserNumber { get; set; }
         public bool Admin { get; set; }
+    
     }
 }
