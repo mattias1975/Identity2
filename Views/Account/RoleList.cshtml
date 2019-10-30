@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @foreach (IdentityRole item in Model)
             {
                 <tr>
                     <td>
@@ -25,7 +25,7 @@
                     </td>
                     <td>
                   
-                    <td>    <a asp-controller="Account" asp-action="AddThisUserToRole" class="btn btn-success">Add user to Country</a></td>
+                    <td>    <a asp-controller="Account" asp-action="AddThisUserToRole" asp-route-id="@item.Id" class="btn btn-success">Add users to this Role</a></td>
                 </tr>
 
 

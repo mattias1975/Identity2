@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Identity.Models
 {
-    public class People
+    public class User
     {
         public int Id { get; set; }
         public string Name { get; set; }

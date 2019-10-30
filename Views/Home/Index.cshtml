@@ -5,8 +5,8 @@
     }
     @if (User.Identity.IsAuthenticated)
     {<h1>Welcome @User.Identity.Name</h1>
-       <button><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="RoleList">Country´s </a></button> 
-        <button><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="AddRole">Add Country </a></button>
+       <button><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="RoleList">Role List </a></button> 
+        <button><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="AddRole">Add Role </a></button>
     }
     @if (!User.Identity.IsAuthenticated)
     {

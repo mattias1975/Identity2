@@ -10,6 +10,6 @@ namespace Identity.Models
         {
         }
 
-        public DbSet<People> People { get; set; }
+        public DbSet<User> People { get; set; }
     }
 }

@@ -1,9 +1,9 @@
-﻿@model List<IdentityRole>
+﻿@model List<AppUser>
 @{
     ViewData["Title"] = "AddThisUserToRole";
 }
 
-<h1>Pick role for the user</h1>
+<h1>Pick  for the user</h1>
 
 @foreach (var item in Model)
 {
@@ -12,7 +12,7 @@
             <td type="button" class=" btn-link ">
 
                 <div class="btn-btn">
-                    @Html.ActionLink(item.Name, "AddUserToRoleSave", "Account", new { userId = ViewBag.UsersId, roleId = item.Id })
+                    @Html.ActionLink(item.UserName, "AddUserToRoleSave", "Account", new { userId = item.UserName, roleId = item.Id })
           </div>  </td>
         </tr>
     </table>
