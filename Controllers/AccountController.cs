@@ -142,6 +142,7 @@ namespace Identity.Controllers
         public IActionResult AddThisUserToRole(string id)
            
         {
+            
             ViewBag.userId = id;
 
             return View(_userManager.Users.ToList());
@@ -151,8 +152,8 @@ namespace Identity.Controllers
         public async Task<IActionResult> AddUserToRoleSave(string userId, string roleId)
         {
 
-            var user = await _userManager.FindByIdAsync(userId);
-            var result = await _userManager.AddToRoleAsync(user, roleId);
+            var UsersId = await _userManager.FindByIdAsync(userId);
+            var result = await _userManager.AddToRoleAsync(UsersId, roleId);
             return RedirectToAction(nameof(RoleList));
         }
     }
