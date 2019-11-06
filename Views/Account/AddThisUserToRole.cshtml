@@ -4,7 +4,7 @@
 }
 
 <h1>Pick a user for this role</h1>
-@if (ViewBag.userid == "Admin")
+@if (User.Identity.Name != "Admin")
 {
 @foreach (var item in Model)
 
@@ -12,7 +12,7 @@
     <table>
         <tr>
             <td type="button" class=" btn-link ">
-
+     
                 <div class="btn-btn">
                     @Html.ActionLink(item.UserName, "AddUserToRoleSave", "Account", new { userId = item.Id, roleId = ViewBag.userid })
                 </div>
