@@ -12,8 +12,19 @@
         <button><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="AddRole">Add Role </a></button>
     }
     else
-    {
-<h1>You most-....</h1>
+    {<table class="alert-danger">
+            <tr>
+                <td>
+                    <h3>You must be a member of the Admin role to view this page</h3>
+                    <h5>if you have a question</h5>
+                    <a href="mailto:info@mattias-gustavsson.com?subject = Feedback&body = Message">
+                        Send Email to Admin
+                    </a>
+
+                </td>
+            </tr>
+
+        </table>
     }
 }
 @if (!User.Identity.IsAuthenticated)
