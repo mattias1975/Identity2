@@ -1,15 +1,23 @@
 ﻿@model List<IdentityRole>
 @{
 
-        ViewData["Title"] = "Index";
-    }
-    @if (User.Identity.IsAuthenticated)
-    {<h1>Welcome @User.Identity.Name</h1>
-       <button><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="RoleList">Role List </a></button> 
+    ViewData["Title"] = "Index";
+}
+@if (User.Identity.IsAuthenticated)
+{
+    <h1>Welcome @User.Identity.Name</h1>
+    @if (User.IsInRole("Admin"))
+    {
+        <button><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="RoleList">Role List </a></button>
         <button><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="AddRole">Add Role </a></button>
     }
-    @if (!User.Identity.IsAuthenticated)
+    else
     {
-
-        <h1> You most log in </h1>
+<h1>You most-....</h1>
     }
+}
+@if (!User.Identity.IsAuthenticated)
+{
+
+    <h1> You most log in </h1>
+}

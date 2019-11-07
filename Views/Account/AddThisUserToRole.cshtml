@@ -1,14 +1,18 @@
 ﻿@model List<AppUser>
+
 @{
     ViewData["Title"] = "AddThisUserToRole";
 }
 
+
 <h1>Pick a user for this role</h1>
-@if (User.Identity.Name != "Admin")
+)
 {
+
 @foreach (var item in Model)
 
 {
+
     <table>
         <tr>
             <td type="button" class=" btn-link ">
@@ -20,4 +24,4 @@
         </tr>
     </table>
 
-} }
+} 

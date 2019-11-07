@@ -19,64 +19,69 @@
 </head>
 <body >
     <header>
-     <div  class="btn-group-lg"><h3 align="center">Identity Site</h3></div>   
-     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light cbtn btn-secondary box-shadow mb-3">
-         
-                <div>
-                    
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav ml-auto">
-                            
-                            @if (User.Identity.IsAuthenticated)
+        
+            <div class="btn-group-lg"><h3 align="center">Identity Site</h3></div>
+        
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light cbtn btn-secondary box-shadow mb-3">
+
+            <div>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav ml-auto">
+
+                        @if (User.Identity.IsAuthenticated)
+                  
 
                             {
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        User´s
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Logout">Log Out</a>
+                           
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    User´s
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Logout">Log Out</a>
 
-                                        <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="CreateUser">Add User </a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="CreateUser">Add User </a>
 
-                                    </div>
                                 </div>
-                                
-                            }
+                            </div>
 
-                            else
-                            {
+                        }
 
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        User´s
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="SignIn">Log in</a>
+                        else
+                        {
 
-                                        <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="CreateUser">Add User</a>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    User´s
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="SignIn">Log in</a>
 
-                                    </div>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="CreateUser">Add User</a>
+
                                 </div>
+                            </div>
 
 
-                            }
+                        }
 
 
 
-</div>
                 </div>
-            </nav>
+            </div>
+        </nav>
     </header>
     <div class="container">
        
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+
     </div>
 
     <footer class="border-top footer text-muted">

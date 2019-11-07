@@ -86,13 +86,18 @@ namespace Identity.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 AppUser user = new AppUser() { UserName = createUser.UserName, Email = createUser.Email };
                 var result = await _userManager.CreateAsync(user, createUser.Password);
 
+
                 if (result.Succeeded)
+
                 {
+                 
                     ViewBag.msg = "User was created.";
                     return RedirectToAction("CreateUser");
+
                 }
                 else
                 {
@@ -104,11 +109,13 @@ namespace Identity.Controllers
         }
 
         public IActionResult RoleList()
+
         {
             return View(_roleManager.Roles.ToList());
         }
 
         [HttpGet]
+        [Authorize(Roles ="Admin")]
         public IActionResult AddRole()
         {
             return View();
